@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html> 
+<html> 
+<head> 
+<style> 
+#wss { opacity:0; 
+     -webkit-transition:opacity 1.0s linear 0s; 
+     transition:opacity 1.0s linear 0s; 
+     position: absolute;
+     z-index: 0;
+}
+#xss { position: absolute;
+       z-index: 5;
+       left: 500px;
+       top: 300px;
+} 
+</style> 
+<script> var wss_i = 0; var wss_array = ["<img src='mars-planeta-opportunity-foto-6183.png'>","<img src='mm1.png'>","<img src='mars-landscape-2.png'>"]; 
+var wss_elem; 
+function wssNext() { 
+wss_i++; wss_elem.style.opacity = 0; 
+if(wss_i > (wss_array.length - 1)) { 
+wss_i = 0; 
+} 
+setTimeout('wssSlide()',1000); 
+} 
+function wssSlide() { 
+wss_elem.innerHTML = wss_array[wss_i]; 
+wss_elem.style.opacity = 1; setTimeout('wssNext()',2000); 
+} 
+</script> 
+</head> 
+<body> 
+<p id="wss"></p>
+<img id="xss" src="futurelivwin.png" width="300px" height="200px">
+<script>
+wss_elem = document.getElementById("wss"); wssSlide(); 
+</script>
+ </body> 
+</html> 
